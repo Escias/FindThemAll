@@ -35,13 +35,6 @@ public class ScreenshotTarget : MonoBehaviour
         ReactivateDisabledObjects();
     }
 
-    /*public Task TakeScreenTarget(GameObject obj)
-    {
-        string screenTargetFilename = obj.name + "_screen.png";
-        ScreenCapture.CaptureScreenshot(screenTargetFilename);
-        return Task.CompletedTask;
-    }*/
-
     public void DisableObjectsBetweenCameraAndTargetObject()
     {
         GameObject targetObject = GameObject.FindGameObjectWithTag("target");
@@ -58,7 +51,6 @@ public class ScreenshotTarget : MonoBehaviour
                 {
                     disabledObjects.Add(hitObject);
                     hitObject.SetActive(false);
-                    Debug.Log("disable");
                 }
             }
         }
