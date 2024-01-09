@@ -968,7 +968,7 @@ MonoBehaviour:
   m_GameScene: {fileID: 1486401822}
   offset: {x: 0, y: 15, z: -10}
   targetOffset: {x: 0, y: 2, z: -10}
-  speed: 15
+  speed: 30
 --- !u!1 &1043556862 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5148817236446094103, guid: 2287f1a4366cf44a3b0a6ba0c3da3a38, type: 3}
@@ -1600,7 +1600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57ebe552283603f4b883a7dbc5231f5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 10
+  rotationSpeed: 30
 --- !u!4 &1486401824
 Transform:
   m_ObjectHideFlags: 0

@@ -49,15 +49,16 @@ public class CameraControl : MonoBehaviour
 
         if (groundPlane.Raycast(cameraRay, out rayLength))
         {
-            pointToLook = cameraRay.GetPoint(rayLength);
+            //pointToLook = cameraRay.GetPoint(rayLength);
+            RaycastHit hit;
+            if (Physics.Raycast(cameraRay, out hit, rayLength))
+            {
+                pointToLook = hit.point;
+                hitObject = hit.collider.gameObject;
+            }
             Debug.DrawLine(cameraRay.origin, pointToLook, Color.blue);
             Zoom();
             HandleZoom();
-        }
-        RaycastHit hit;
-        if (Physics.Raycast(cameraRay, out hit, rayLength))
-        {
-            hitObject = hit.collider.gameObject;
         }
     }
 

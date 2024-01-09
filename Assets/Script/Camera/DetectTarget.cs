@@ -29,9 +29,7 @@ public class DetectTarget : MonoBehaviour
             if (cameraControl.GetHitObject().tag == "target")
             {
                 cameraControl.ZoomOnTarget(cameraControl.GetHitObject());
-                screenshotTarget.DisableObjectsBetweenCameraAndTargetObject();
                 screenshotTarget.TakeScreenTarget(cameraControl.GetHitObject());
-                screenshotTarget.ReactivateDisabledObjects();
             }
         }
     }
