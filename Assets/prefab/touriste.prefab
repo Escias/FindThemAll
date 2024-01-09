@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1536193826776685281
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4880200708817718564}
+  - component: {fileID: 1443408479684196620}
+  - component: {fileID: 5749015149155557150}
+  - component: {fileID: 5120033439316041390}
+  m_Layer: 0
+  m_Name: touriste
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4880200708817718564
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536193826776685281}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.07, y: 1.77, z: -4.63}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1443408479684196620
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536193826776685281}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: ee8a8b3abf3e649b18fc4e17943bc4e4, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 17.475, y: 23.3}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &5749015149155557150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536193826776685281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d209ddabb9db844bc801e990aad47b2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ia: {fileID: 1536193826776685281}
+  navMeshAgent: {fileID: 5120033439316041390}
+  sprites:
+  - {fileID: 21300000, guid: d74b2786715294ca59a9bf0906dd5bcf, type: 3}
+  - {fileID: 21300000, guid: 5bccd7d25de7548b9aa2b6f922097238, type: 3}
+  - {fileID: 21300000, guid: 2aab6ec46506a4e269f7fe5c0290362b, type: 3}
+  - {fileID: 21300000, guid: fc7aab97fc510456ea02d1db0818d131, type: 3}
+  - {fileID: 21300000, guid: e9506b9e413e84c949e2d6c214ec6d51, type: 3}
+  - {fileID: 21300000, guid: 19bf32a29faa24d118f151e11b93a7da, type: 3}
+  - {fileID: 21300000, guid: cdad26c93c56344d2933a7ef09f2c030, type: 3}
+  - {fileID: 21300000, guid: 6f980144e03d5408b9f23ba83e878b06, type: 3}
+  - {fileID: 21300000, guid: 64a73aab99a8f4748b7f436d5fad4192, type: 3}
+  - {fileID: 21300000, guid: 9294f0dc576ab443d874747f984009e8, type: 3}
+  - {fileID: 21300000, guid: e91752fdaf2784de7892729e2c57aa8f, type: 3}
+  - {fileID: 21300000, guid: 64e388172847a4c5e923314772d6d0d0, type: 3}
+--- !u!195 &5120033439316041390
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536193826776685281}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 8.7375
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 0
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 23.3
+  m_BaseOffset: 11.65
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
