@@ -19,12 +19,21 @@ public class IA : MonoBehaviour
 
     private float timeToStop;
 
-    // Start is called before the first frame update
-    void Start()
+    
+    private void Awake()
     {
         timeToStop = randomStopTime();
         timer = Time.time;
         searchDestination();
+        
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+
+        //ScreenCapture.CaptureScreenshot("toto");
     }
 
     // Update is called once per frame
@@ -36,13 +45,16 @@ public class IA : MonoBehaviour
 
 
     private void searchDestination(){
+        
         timeToStop = randomStopTime();
         randomDirection = Random.insideUnitSphere * 10;
+        
     }
 
     private void moveSystem(){
-    if(navMeshAgent.remainingDistance < 0.5f){
-
+    
+        if(navMeshAgent.remainingDistance < 0.5f){
+            //Debug.Log(navMeshAgent.remainingDistance);
             if(!isAtDestination){
                 isAtDestination = true;
                 timer = Time.time;
@@ -57,10 +69,13 @@ public class IA : MonoBehaviour
             
             
         }
-        navMeshAgent.destination = randomDirection;
+        navMeshAgent.ResetPath();
+        navMeshAgent.SetDestination(randomDirection+ gameObject.transform.position);
+        
     }
+    
 
     private float randomStopTime(){
-        return Random.Range(3f, 10f);
+        return Random.Range(0f, 10f);
     }
 }
