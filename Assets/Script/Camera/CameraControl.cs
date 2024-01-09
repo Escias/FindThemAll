@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 using static UnityEngine.GraphicsBuffer;
 
 public class CameraControl : MonoBehaviour
@@ -11,16 +12,16 @@ public class CameraControl : MonoBehaviour
     [SerializeField]
     private Camera m_Camera;
     [SerializeField]
-    private GameObject m_BasePositionCamera;
-    [SerializeField]
     private GameObject m_GameScene;
 
     private bool zoom;
     private Vector3 moveInput;
     private Vector3 moveVelocity;
     private Vector3 pointToLook;
+    private GameObject hitObject;
 
     public Vector3 offset;
+    public Vector3 targetOffset;
     public float speed;
 
     private float zoomSpeed = 20f;
@@ -50,6 +51,11 @@ public class CameraControl : MonoBehaviour
             pointToLook = cameraRay.GetPoint(rayLength);
             Debug.DrawLine(cameraRay.origin, pointToLook, Color.blue);
             Zoom(false);
+        }
+        RaycastHit hit;
+        if (Physics.Raycast(cameraRay, out hit, rayLength))
+        {
+            hitObject = hit.collider.gameObject;
         }
         HandleZoom();
     }
@@ -86,6 +92,14 @@ public class CameraControl : MonoBehaviour
         }
     }
 
+    public void ZoomOnTarget(GameObject targetGameObject)
+    {
+        Vector3 targetPosition = targetGameObject.transform.position + targetOffset;
+        m_Camera.fieldOfView = 15f;
+        transform.position = new Vector3(targetPosition.x, targetPosition.y, targetPosition.z);
+        transform.rotation = Quaternion.Euler(new Vector3(10, 0, 0));
+    }
+
     void HandleZoom()
     {
         float scroll = Input.GetAxis("Mouse ScrollWheel");
@@ -93,8 +107,8 @@ public class CameraControl : MonoBehaviour
         m_Camera.fieldOfView = Mathf.Clamp(m_Camera.fieldOfView, minFOV, defaultFOV);
     }
 
-    public float GetDefaultFov()
+    public GameObject GetHitObject()
     {
-        return defaultFOV;
+        return hitObject;
     }
 }
