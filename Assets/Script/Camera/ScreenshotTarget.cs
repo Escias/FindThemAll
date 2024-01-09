@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class ScreenshotTarget : MonoBehaviour
@@ -23,8 +24,15 @@ public class ScreenshotTarget : MonoBehaviour
 
     public void TakeScreenTarget(GameObject obj)
     {
-        string screenTargetFilename = obj.name + "_screen.png";
-        ScreenCapture.CaptureScreenshot(screenTargetFilename);
+        StartCoroutine(TakeScreenshotCoroutine(obj.name + "_screen.png"));
+    }
+
+    private IEnumerator TakeScreenshotCoroutine(string filename)
+    {
+        DisableObjectsBetweenCameraAndTargetObject();
+        yield return new WaitForEndOfFrame();
+        ScreenCapture.CaptureScreenshot(filename);
+        ReactivateDisabledObjects();
     }
 
     public void DisableObjectsBetweenCameraAndTargetObject()
