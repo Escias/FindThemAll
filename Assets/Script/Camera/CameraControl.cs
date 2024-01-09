@@ -19,6 +19,7 @@ public class CameraControl : MonoBehaviour
     private Vector3 moveVelocity;
     private Vector3 pointToLook;
     private GameObject hitObject;
+    private Vector3 basePosition = new Vector3(0, 30, -25);
 
     public Vector3 offset;
     public Vector3 targetOffset;
@@ -50,14 +51,14 @@ public class CameraControl : MonoBehaviour
         {
             pointToLook = cameraRay.GetPoint(rayLength);
             Debug.DrawLine(cameraRay.origin, pointToLook, Color.blue);
-            Zoom(false);
+            Zoom();
+            HandleZoom();
         }
         RaycastHit hit;
         if (Physics.Raycast(cameraRay, out hit, rayLength))
         {
             hitObject = hit.collider.gameObject;
         }
-        HandleZoom();
     }
 
     private void FixedUpdate()
@@ -66,16 +67,11 @@ public class CameraControl : MonoBehaviour
         m_Camera.transform.position = newPosition;
     }
 
-    public void Zoom(bool getTarget)
+    public void Zoom()
     {
-        if (Input.GetMouseButtonDown(1) || (getTarget && Input.GetMouseButtonDown(0))) 
+        if (Input.GetMouseButtonDown(1)) 
         {
             zoom = !zoom;
-            float fov = m_Camera.fieldOfView;
-            if (fov != defaultFOV && !getTarget)
-            {
-                zoom = false;
-            }
             if (zoom)
             {
                 Vector3 targetPosition = pointToLook + offset;
@@ -86,7 +82,7 @@ public class CameraControl : MonoBehaviour
             else if (!zoom)
             {
                 m_Camera.fieldOfView = defaultFOV;
-                transform.position = new Vector3(0, 30, -25);
+                transform.position = basePosition;
                 transform.rotation = Quaternion.Euler(new Vector3(60, 0, 0));
             }
         }
