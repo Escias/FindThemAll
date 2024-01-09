@@ -49,7 +49,6 @@ public class CameraControl : MonoBehaviour
 
         if (groundPlane.Raycast(cameraRay, out rayLength))
         {
-            //pointToLook = cameraRay.GetPoint(rayLength);
             RaycastHit hit;
             if (Physics.Raycast(cameraRay, out hit, rayLength))
             {
