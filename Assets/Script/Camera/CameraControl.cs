@@ -19,7 +19,7 @@ public class CameraControl : MonoBehaviour
     private Vector3 moveVelocity;
     private Vector3 pointToLook;
     private GameObject hitObject;
-    private Vector3 basePosition = new Vector3(0, 30, -25);
+    private Vector3 basePosition = new Vector3(0, 40, -70);
 
     public Vector3 offset;
     public Vector3 targetOffset;
@@ -77,13 +77,13 @@ public class CameraControl : MonoBehaviour
                 Vector3 targetPosition = pointToLook + offset;
                 m_Camera.fieldOfView = 15f;
                 transform.position = new Vector3(targetPosition.x, targetPosition.y, targetPosition.z);
-                transform.rotation = Quaternion.Euler(new Vector3(60, 0, 0));
+                transform.rotation = Quaternion.Euler(new Vector3(45, 0, 0));
             }
             else if (!zoom)
             {
                 m_Camera.fieldOfView = defaultFOV;
                 transform.position = basePosition;
-                transform.rotation = Quaternion.Euler(new Vector3(60, 0, 0));
+                transform.rotation = Quaternion.Euler(new Vector3(45, 0, 0));
             }
         }
     }

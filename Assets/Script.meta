@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<<< HEAD:Assets/Script.meta
 guid: 63301e4bae818504a931a512e34c8ed9
+========
+guid: 30ddc828a90674803ac4af37adc7a137
+>>>>>>>> 7f8827857e42808bbd771aa7fb25873804b6bc97:Assets/Scenes/Alban.meta
+=======
+guid: f6631064733584901b312fefe2b37331
+>>>>>>> 7f8827857e42808bbd771aa7fb25873804b6bc97
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
