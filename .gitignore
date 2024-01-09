@@ -504,6 +504,13 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Collapse Unity-generated files on GitHub
+*.asset linguist-generated
+*.mat linguist-generated
+*.meta linguist-generated
+*.prefab linguist-generated
+*.unity linguist-generated
+
 ### VisualStudio ###
 
 # User-specific files

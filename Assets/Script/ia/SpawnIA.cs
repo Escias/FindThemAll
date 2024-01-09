@@ -6,6 +6,11 @@ public class SpawnIA : MonoBehaviour
 {
     [SerializeField]
     private GameObject prefabIA;
+    [SerializeField]
+    private GameObject parentObject;
+
+    [SerializeField]
+    private int posY;
 
     public int nbIA;
 
@@ -23,9 +28,9 @@ public class SpawnIA : MonoBehaviour
         {
             Vector3 pos = Random.insideUnitCircle * 55;
             pos.z = pos.y;
-            pos.y = transform.position.y;
-            Instantiate(prefabIA, pos+ transform.position, Quaternion.identity);
-
+            pos.y = posY;
+            GameObject newObject = Instantiate(prefabIA, pos+ transform.position, Quaternion.identity);
+            newObject.transform.SetParent(parentObject.transform, false);
         }
     }
 }
