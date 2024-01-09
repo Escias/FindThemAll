@@ -11,6 +11,12 @@ public class IA : MonoBehaviour
     [SerializeField]
     private NavMeshAgent navMeshAgent;
 
+    [SerializeField]
+    private Sprite[] sprites;
+
+    
+    private Camera camera;
+
     private Vector3 randomDirection = new Vector3();
 
     private bool isAtDestination = false;
@@ -19,13 +25,17 @@ public class IA : MonoBehaviour
 
     private float timeToStop;
 
+
+
     
     private void Awake()
     {
         timeToStop = randomStopTime();
         timer = Time.time;
         searchDestination();
-        
+        camera = GameObject.Find("Main Camera").GetComponent<Camera>();
+        int random = Random.Range(0, sprites.Length - 1);
+        gameObject.GetComponent<SpriteRenderer>().sprite = sprites[random];
     }
 
     // Start is called before the first frame update
@@ -40,7 +50,8 @@ public class IA : MonoBehaviour
     void Update()
     {
         moveSystem();
-        
+        var n  = camera.transform.position - transform.position;
+        transform.rotation = Quaternion.LookRotation(n);
     }
 
 
