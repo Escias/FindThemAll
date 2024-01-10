@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+
+    public bool isAstronauteFind = false;
+    public bool isAlienFind = false;
+    public bool isParrotsFind = false;
+    public bool isDrangonFind = false;
+
+
     // Start is called before the first frame update
     void Start()
     {
