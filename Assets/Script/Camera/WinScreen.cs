@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnityEngine.GraphicsBuffer;
@@ -33,5 +34,14 @@ public class WinScreen : MonoBehaviour
         GameObject imageScreenVictory = m_VictoryScreen.transform.Find("Screen").gameObject;
         Image image = imageScreenVictory.GetComponent<Image>();
         image.sprite = currentSprite;
+        AppendTextToFile(image.sprite.name);
+    }
+
+    static void AppendTextToFile(string textToAppend)
+    {
+        using (StreamWriter sw = new StreamWriter(Application.persistentDataPath + "/save/trophy.txt", true))
+        {
+            sw.WriteLine(textToAppend);
+        }
     }
 }

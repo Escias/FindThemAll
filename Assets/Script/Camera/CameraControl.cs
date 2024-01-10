@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 using static UnityEngine.GraphicsBuffer;
 
@@ -13,6 +14,8 @@ public class CameraControl : MonoBehaviour
     private Camera m_Camera;
     [SerializeField]
     private GameObject m_GameScene;
+    [SerializeField]
+    private GameObject m_Scope;
 
     private bool zoom;
     private Vector3 moveInput;
@@ -42,6 +45,10 @@ public class CameraControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Menu");
+        }
         moveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
         moveVelocity = moveInput * speed;
 
@@ -63,6 +70,14 @@ public class CameraControl : MonoBehaviour
                 CheckZoom();
                 HandleZoom();
             }
+        }
+        if (m_Camera.fieldOfView <= 55)
+        {
+            m_Scope.SetActive(true);
+        }
+        else
+        {
+            m_Scope.SetActive(false);
         }
     }
 
