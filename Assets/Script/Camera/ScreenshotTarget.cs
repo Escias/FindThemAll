@@ -8,12 +8,19 @@ public class ScreenshotTarget : MonoBehaviour
     [SerializeField]
     private Camera m_Camera;
 
+    CameraControl cameraControl;
+    WinScreen winScreen;
+    GameObject targetGameObject;
+
     private List<GameObject> disabledObjects = new List<GameObject>();
+    private bool isOnTarget;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        cameraControl = GetComponent<CameraControl>();
+        winScreen = GetComponent<WinScreen>();
+        isOnTarget = false;
     }
 
     // Update is called once per frame
@@ -24,15 +31,30 @@ public class ScreenshotTarget : MonoBehaviour
 
     public void TakeScreenTarget(GameObject obj)
     {
-        StartCoroutine(TakeScreenshotCoroutine(obj.name + "_screen.png"));
+        StartCoroutine(TakeScreenshotCoroutine(obj.name + "_screen.png", obj));
     }
 
-    private IEnumerator TakeScreenshotCoroutine(string filename)
+    private IEnumerator TakeScreenshotCoroutine(string filename, GameObject target)
     {
-        DisableObjectsBetweenCameraAndTargetObject();
-        yield return new WaitForEndOfFrame();
-        ScreenCapture.CaptureScreenshot(filename);
-        ReactivateDisabledObjects();
+        if (target)
+        {
+            isOnTarget = true;
+            DisableObjectsBetweenCameraAndTargetObject();
+            yield return new WaitForEndOfFrame();
+            ScreenCapture.CaptureScreenshot(filename);
+            ReactivateDisabledObjects();
+            winScreen.SetImageVictory(target);
+            winScreen.ShowVictoryScreen(true);
+            yield return new WaitForSeconds(3f);
+            cameraControl.Unzoom();
+            isOnTarget = false;
+            yield return new WaitForSeconds(2f);
+            winScreen.ShowVictoryScreen(false);
+        }
+        else
+        {
+            Debug.Log("target is null");
+        }
     }
 
     public void DisableObjectsBetweenCameraAndTargetObject()
@@ -66,5 +88,10 @@ public class ScreenshotTarget : MonoBehaviour
             }
         }
         disabledObjects.Clear();
+    }
+
+    public bool GetIsOnTarget()
+    {
+        return isOnTarget;
     }
 }
