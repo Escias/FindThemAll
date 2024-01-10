@@ -9,6 +9,7 @@ public class ScreenshotTarget : MonoBehaviour
     private Camera m_Camera;
 
     CameraControl cameraControl;
+    WinScreen winScreen;
 
     private List<GameObject> disabledObjects = new List<GameObject>();
     private bool isOnTarget;
@@ -17,6 +18,7 @@ public class ScreenshotTarget : MonoBehaviour
     void Start()
     {
         cameraControl = GetComponent<CameraControl>();
+        winScreen = GetComponent<WinScreen>();
         isOnTarget = false;
     }
 
@@ -33,14 +35,19 @@ public class ScreenshotTarget : MonoBehaviour
 
     private IEnumerator TakeScreenshotCoroutine(string filename)
     {
+        GameObject target = cameraControl.GetHitObject();
         isOnTarget = true;
         DisableObjectsBetweenCameraAndTargetObject();
         yield return new WaitForEndOfFrame();
         ScreenCapture.CaptureScreenshot(filename);
         ReactivateDisabledObjects();
+        winScreen.SetImageVictory(target);
+        winScreen.ShowVictoryScreen(true);
         yield return new WaitForSeconds(3f);
         cameraControl.Unzoom();
         isOnTarget = false;
+        yield return new WaitForSeconds(2f);
+        winScreen.ShowVictoryScreen(false);
     }
 
     public void DisableObjectsBetweenCameraAndTargetObject()
