@@ -10,11 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4880200708817718564}
   - component: {fileID: 1443408479684196620}
-  - component: {fileID: 5749015149155557150}
   - component: {fileID: 5120033439316041390}
+  - component: {fileID: -1455176454381052488}
+  - component: {fileID: 2463052082893203417}
   m_Layer: 0
   m_Name: mascotte
-  m_TagString: Untagged
+  m_TagString: target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,33 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5749015149155557150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1536193826776685281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d209ddabb9db844bc801e990aad47b2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ia: {fileID: 1536193826776685281}
-  navMeshAgent: {fileID: 5120033439316041390}
-  sprites:
-  - {fileID: 21300000, guid: d74b2786715294ca59a9bf0906dd5bcf, type: 3}
-  - {fileID: 21300000, guid: 5bccd7d25de7548b9aa2b6f922097238, type: 3}
-  - {fileID: 21300000, guid: 2aab6ec46506a4e269f7fe5c0290362b, type: 3}
-  - {fileID: 21300000, guid: fc7aab97fc510456ea02d1db0818d131, type: 3}
-  - {fileID: 21300000, guid: e9506b9e413e84c949e2d6c214ec6d51, type: 3}
-  - {fileID: 21300000, guid: 19bf32a29faa24d118f151e11b93a7da, type: 3}
-  - {fileID: 21300000, guid: cdad26c93c56344d2933a7ef09f2c030, type: 3}
-  - {fileID: 21300000, guid: 6f980144e03d5408b9f23ba83e878b06, type: 3}
-  - {fileID: 21300000, guid: 64a73aab99a8f4748b7f436d5fad4192, type: 3}
-  - {fileID: 21300000, guid: 9294f0dc576ab443d874747f984009e8, type: 3}
-  - {fileID: 21300000, guid: e91752fdaf2784de7892729e2c57aa8f, type: 3}
-  - {fileID: 21300000, guid: 64e388172847a4c5e923314772d6d0d0, type: 3}
 --- !u!195 &5120033439316041390
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -135,3 +109,41 @@ NavMeshAgent:
   m_BaseOffset: 11.65
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-1455176454381052488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536193826776685281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa79e11a1205c445f94129bfd74f0208, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ia: {fileID: 1536193826776685281}
+  navMeshAgent: {fileID: 5120033439316041390}
+  sprites: []
+--- !u!136 &2463052082893203417
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536193826776685281}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 8.7375
+  m_Height: 23.3
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}

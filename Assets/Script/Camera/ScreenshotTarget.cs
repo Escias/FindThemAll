@@ -23,7 +23,7 @@ public class ScreenshotTarget : MonoBehaviour
 
     public void TakeScreenTarget(GameObject obj)
     {
-        string screenTargetFilename = obj.name + "_screen.png";
+        string screenTargetFilename = "Assets/"+obj.name + "_screen.png";
         ScreenCapture.CaptureScreenshot(screenTargetFilename);
     }
 
