@@ -39,6 +39,7 @@ public class ScreenshotTarget : MonoBehaviour
         if (target)
         {
             isOnTarget = true;
+            cameraControl.SetScope(false);
             DisableObjectsBetweenCameraAndTargetObject();
             yield return new WaitForEndOfFrame();
             ScreenCapture.CaptureScreenshot(filename);
