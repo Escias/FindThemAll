@@ -734,7 +734,7 @@ GameObject:
   - component: {fileID: 1090888828}
   - component: {fileID: 1090888827}
   m_Layer: 5
-  m_Name: Image
+  m_Name: astronaute
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
