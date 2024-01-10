@@ -183,8 +183,8 @@ MonoBehaviour:
   m_text: "FOUCAULT Rose\nJUNG Sacha\nL'H\xC9NORET Eliott\nROUSGUISTO Alvine\nSWANN
     Will\nTHAKURI Nikash\n\nLACOU Alban\nLAI Jimmy"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d7d8c6e1288047c4e809455304748bb2, type: 2}
+  m_sharedMaterial: {fileID: 2359678921485068573, guid: d7d8c6e1288047c4e809455304748bb2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -374,7 +374,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79ad34ee9b5798645b058b46ab3c8e8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creditsObject: {fileID: 831875744}
 --- !u!1 &1011096156
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,8 +440,8 @@ MonoBehaviour:
     Made
     with Unity'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d7d8c6e1288047c4e809455304748bb2, type: 2}
+  m_sharedMaterial: {fileID: 2359678921485068573, guid: d7d8c6e1288047c4e809455304748bb2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -633,8 +632,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Find Them All
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d7d8c6e1288047c4e809455304748bb2, type: 2}
+  m_sharedMaterial: {fileID: 2359678921485068573, guid: d7d8c6e1288047c4e809455304748bb2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -939,8 +938,8 @@ MonoBehaviour:
 
     Programmer'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d7d8c6e1288047c4e809455304748bb2, type: 2}
+  m_sharedMaterial: {fileID: 2359678921485068573, guid: d7d8c6e1288047c4e809455304748bb2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1077,8 +1076,8 @@ MonoBehaviour:
 
     Coding Factory'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d7d8c6e1288047c4e809455304748bb2, type: 2}
+  m_sharedMaterial: {fileID: 2359678921485068573, guid: d7d8c6e1288047c4e809455304748bb2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1211,8 +1210,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Thank you\nfor \nPlaying"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d7d8c6e1288047c4e809455304748bb2, type: 2}
+  m_sharedMaterial: {fileID: 2359678921485068573, guid: d7d8c6e1288047c4e809455304748bb2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
