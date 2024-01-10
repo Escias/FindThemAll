@@ -10,9 +10,6 @@ public class DetectTarget : MonoBehaviour
     CameraControl cameraControl;
     ScreenshotTarget screenshotTarget;
 
-    private GameObject targetGameObject;
-    private Coroutine c_Screenshot;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +20,7 @@ public class DetectTarget : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !screenshotTarget.GetIsOnTarget())
         {
             if (cameraControl.GetHitObject().tag == "target")
             {

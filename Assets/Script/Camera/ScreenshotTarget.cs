@@ -8,12 +8,16 @@ public class ScreenshotTarget : MonoBehaviour
     [SerializeField]
     private Camera m_Camera;
 
+    CameraControl cameraControl;
+
     private List<GameObject> disabledObjects = new List<GameObject>();
+    private bool isOnTarget;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        cameraControl = GetComponent<CameraControl>();
+        isOnTarget = false;
     }
 
     // Update is called once per frame
@@ -29,10 +33,14 @@ public class ScreenshotTarget : MonoBehaviour
 
     private IEnumerator TakeScreenshotCoroutine(string filename)
     {
+        isOnTarget = true;
         DisableObjectsBetweenCameraAndTargetObject();
         yield return new WaitForEndOfFrame();
         ScreenCapture.CaptureScreenshot(filename);
         ReactivateDisabledObjects();
+        yield return new WaitForSeconds(3f);
+        cameraControl.Unzoom();
+        isOnTarget = false;
     }
 
     public void DisableObjectsBetweenCameraAndTargetObject()
@@ -66,5 +74,10 @@ public class ScreenshotTarget : MonoBehaviour
             }
         }
         disabledObjects.Clear();
+    }
+
+    public bool GetIsOnTarget()
+    {
+        return isOnTarget;
     }
 }

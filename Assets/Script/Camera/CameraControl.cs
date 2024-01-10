@@ -29,12 +29,14 @@ public class CameraControl : MonoBehaviour
     private float minFOV = 15f;
     private float defaultFOV;
 
+    ScreenshotTarget screenshotTarget;
+
     // Start is called before the first frame update
     void Start()
     {
         zoom = false;
         defaultFOV = m_Camera.fieldOfView;
-        Debug.Log(defaultFOV);
+        screenshotTarget = GetComponent<ScreenshotTarget>();
     }
 
     // Update is called once per frame
@@ -56,8 +58,11 @@ public class CameraControl : MonoBehaviour
                 hitObject = hit.collider.gameObject;
             }
             Debug.DrawLine(cameraRay.origin, pointToLook, Color.blue);
-            Zoom();
-            HandleZoom();
+            if (!screenshotTarget.GetIsOnTarget())
+            {
+                CheckZoom();
+                HandleZoom();
+            }
         }
     }
 
@@ -67,25 +72,35 @@ public class CameraControl : MonoBehaviour
         m_Camera.transform.position = newPosition;
     }
 
-    public void Zoom()
+    public void CheckZoom()
     {
         if (Input.GetMouseButtonDown(1)) 
         {
             zoom = !zoom;
             if (zoom)
             {
-                Vector3 targetPosition = pointToLook + offset;
-                m_Camera.fieldOfView = 15f;
-                transform.position = new Vector3(targetPosition.x, targetPosition.y, targetPosition.z);
-                transform.rotation = Quaternion.Euler(new Vector3(45, 0, 0));
+                Zoom();
             }
             else if (!zoom)
             {
-                m_Camera.fieldOfView = defaultFOV;
-                transform.position = basePosition;
-                transform.rotation = Quaternion.Euler(new Vector3(45, 0, 0));
+                Unzoom();
             }
         }
+    }
+
+    public void Zoom()
+    {
+        Vector3 targetPosition = pointToLook + offset;
+        m_Camera.fieldOfView = 15f;
+        transform.position = new Vector3(targetPosition.x, targetPosition.y, targetPosition.z);
+        transform.rotation = Quaternion.Euler(new Vector3(45, 0, 0));
+    }
+
+    public void Unzoom()
+    {
+        m_Camera.fieldOfView = defaultFOV;
+        transform.position = basePosition;
+        transform.rotation = Quaternion.Euler(new Vector3(45, 0, 0));
     }
 
     public void ZoomOnTarget(GameObject targetGameObject)
