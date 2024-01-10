@@ -137,5 +137,5 @@ Material:
     - _FresnelEffect: {r: 0.2030631, g: 0.2030631, b: 0.2030631, a: 0}
     - _HologramTiling: {r: 64, g: 64, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-    - _mainColor: {r: 1, g: 1, b: 1, a: 0.003921569}
+    - _mainColor: {r: 0, g: 0.023590393, b: 0.4716981, a: 0.003921569}
   m_BuildTextureStacks: []
