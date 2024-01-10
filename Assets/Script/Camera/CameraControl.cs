@@ -71,13 +71,13 @@ public class CameraControl : MonoBehaviour
                 HandleZoom();
             }
         }
-        if (m_Camera.fieldOfView <= 55)
+        if (m_Camera.fieldOfView <= 55 && !screenshotTarget.GetIsOnTarget())
         {
-            m_Scope.SetActive(true);
+            SetScope(true);
         }
         else
         {
-            m_Scope.SetActive(false);
+            SetScope(false);
         }
     }
 
@@ -85,6 +85,11 @@ public class CameraControl : MonoBehaviour
     {
         Vector3 newPosition = transform.position + moveVelocity * Time.fixedDeltaTime;
         m_Camera.transform.position = newPosition;
+    }
+
+    public void SetScope(bool scopeStatus)
+    {
+        m_Scope.SetActive(scopeStatus);
     }
 
     public void CheckZoom()
